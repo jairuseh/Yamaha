@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		BEA65F8629FBCD9B00AC398A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8529FBCD9B00AC398A /* AppDelegate.swift */; };
 		BEA65F8829FBCD9B00AC398A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8729FBCD9B00AC398A /* SceneDelegate.swift */; };
-		BEA65F8A29FBCD9B00AC398A /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8929FBCD9B00AC398A /* LoginScreenViewController.swift */; };
+		BEA65F8A29FBCD9B00AC398A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8929FBCD9B00AC398A /* LoginViewController.swift */; };
 		BEA65F8F29FBCD9F00AC398A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA65F8E29FBCD9F00AC398A /* Assets.xcassets */; };
 		BEA65F9229FBCD9F00AC398A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA65F9029FBCD9F00AC398A /* LaunchScreen.storyboard */; };
 		BEA65F9A29FBCED500AC398A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F9929FBCED500AC398A /* TableViewController.swift */; };
+		BEA65F9C29FFAB9C00AC398A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F9B29FFAB9C00AC398A /* HomePageViewController.swift */; };
+		BEA65FA029FFAE5E00AC398A /* LSTALLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F9F29FFAE5E00AC398A /* LSTALLViewController.swift */; };
+		BEA65FA229FFAE8500AC398A /* BOLOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65FA129FFAE8500AC398A /* BOLOViewController.swift */; };
+		BEA65FA429FFB2EA00AC398A /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65FA329FFB2EA00AC398A /* Sample.swift */; };
+		BEA660FC2A00E94300AC398A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA660FB2A00E94300AC398A /* Constants.swift */; };
+		BEA661042A00EA9600AC398A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA661032A00EA9600AC398A /* Product.swift */; };
+		BEA661062A00EC8A00AC398A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA661052A00EC8A00AC398A /* ProductCell.swift */; };
+		BEA661082A00F58E00AC398A /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA661072A00F58E00AC398A /* ProductsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEA65F8229FBCD9B00AC398A /* Yamaha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yamaha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA65F8529FBCD9B00AC398A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA65F8729FBCD9B00AC398A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEA65F8929FBCD9B00AC398A /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		BEA65F8929FBCD9B00AC398A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BEA65F8E29FBCD9F00AC398A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA65F9129FBCD9F00AC398A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA65F9329FBCD9F00AC398A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA65F9929FBCED500AC398A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BEA65F9B29FFAB9C00AC398A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		BEA65F9F29FFAE5E00AC398A /* LSTALLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTALLViewController.swift; sourceTree = "<group>"; };
+		BEA65FA129FFAE8500AC398A /* BOLOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOLOViewController.swift; sourceTree = "<group>"; };
+		BEA65FA329FFB2EA00AC398A /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		BEA660FB2A00E94300AC398A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BEA661032A00EA9600AC398A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BEA661052A00EC8A00AC398A /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		BEA661072A00F58E00AC398A /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,71 @@
 		BEA65F8429FBCD9B00AC398A /* Yamaha */ = {
 			isa = PBXGroup;
 			children = (
+				BEA660FA2A00E91D00AC398A /* Utility */,
+				BEA660FD2A00EA4300AC398A /* API */,
+				BEA660FF2A00EA5700AC398A /* Models */,
+				BEA661022A00EA7700AC398A /* Controllers */,
+				BEA661012A00EA6900AC398A /* ViewModels */,
+				BEA661002A00EA6200AC398A /* Views */,
 				BEA65F8529FBCD9B00AC398A /* AppDelegate.swift */,
 				BEA65F8729FBCD9B00AC398A /* SceneDelegate.swift */,
-				BEA65F8929FBCD9B00AC398A /* LoginScreenViewController.swift */,
 				BEA65F8E29FBCD9F00AC398A /* Assets.xcassets */,
 				BEA65F9029FBCD9F00AC398A /* LaunchScreen.storyboard */,
 				BEA65F9329FBCD9F00AC398A /* Info.plist */,
 				BEA65F9929FBCED500AC398A /* TableViewController.swift */,
+				BEA65FA329FFB2EA00AC398A /* Sample.swift */,
+				BEA65F9F29FFAE5E00AC398A /* LSTALLViewController.swift */,
+				BEA65FA129FFAE8500AC398A /* BOLOViewController.swift */,
 			);
 			path = Yamaha;
+			sourceTree = "<group>";
+		};
+		BEA660FA2A00E91D00AC398A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BEA660FB2A00E94300AC398A /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		BEA660FD2A00EA4300AC398A /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BEA660FF2A00EA5700AC398A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEA661032A00EA9600AC398A /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEA661002A00EA6200AC398A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEA661052A00EC8A00AC398A /* ProductCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEA661012A00EA6900AC398A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BEA661022A00EA7700AC398A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEA65F9B29FFAB9C00AC398A /* HomePageViewController.swift */,
+				BEA65F8929FBCD9B00AC398A /* LoginViewController.swift */,
+				BEA661072A00F58E00AC398A /* ProductsController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +209,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA65F8A29FBCD9B00AC398A /* LoginScreenViewController.swift in Sources */,
+				BEA65F8A29FBCD9B00AC398A /* LoginViewController.swift in Sources */,
+				BEA65FA429FFB2EA00AC398A /* Sample.swift in Sources */,
+				BEA661082A00F58E00AC398A /* ProductsController.swift in Sources */,
 				BEA65F8629FBCD9B00AC398A /* AppDelegate.swift in Sources */,
 				BEA65F8829FBCD9B00AC398A /* SceneDelegate.swift in Sources */,
+				BEA661042A00EA9600AC398A /* Product.swift in Sources */,
+				BEA660FC2A00E94300AC398A /* Constants.swift in Sources */,
+				BEA65F9C29FFAB9C00AC398A /* HomePageViewController.swift in Sources */,
+				BEA65FA029FFAE5E00AC398A /* LSTALLViewController.swift in Sources */,
+				BEA661062A00EC8A00AC398A /* ProductCell.swift in Sources */,
+				BEA65FA229FFAE8500AC398A /* BOLOViewController.swift in Sources */,
 				BEA65F9A29FBCED500AC398A /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

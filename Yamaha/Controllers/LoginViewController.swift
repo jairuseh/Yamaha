@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginScreenViewController: UIViewController {
+class LoginViewController: UIViewController {
   
   let container: UIView = {
     let container = UIView()
@@ -42,21 +42,27 @@ class LoginScreenViewController: UIViewController {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.backgroundColor = .systemPink
     button.layer.cornerRadius = 10
+    
     return button
   }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    usernameTextField.text = "jai@smartwave.ph"
+    passwordTextField.text = "123456"
       
     view.backgroundColor = .systemPink
       
-      // Add subviews to the view
+    // Add subviews to the view
     container.addSubview(usernameTextField)
     container.addSubview(passwordTextField)
     container.addSubview(loginButton)
     view.addSubview(container)
+    
+    loginButton.addTarget(self, action: #selector(goToHomePage), for: .touchUpInside)
       
-      // Add constraints
+    // Add constraints
     NSLayoutConstraint.activate([
       container.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
       container.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -83,4 +89,51 @@ class LoginScreenViewController: UIViewController {
     ])
   }
   
+  @objc func goToHomePage() {
+    
+//    let homePageViewController = HomePageViewController()
+//    let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+//        sceneDelegate?.window?.rootViewController = homePageViewController
+    
+    let savedEmail = "jai@smartwave.ph"
+    let savedPassword = "123456"
+    
+    let homePageViewController = HomePageViewController()
+    let navigationController = UINavigationController(rootViewController: homePageViewController)
+        
+    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+    let window = windowScene.windows.first {
+      guard let email = usernameTextField.text, let password = passwordTextField.text else {
+        return
+      }
+      if email == savedEmail && password == savedPassword {
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        } else {
+          let alertController = UIAlertController(title: "Error", message: "Invalid email or password", preferredStyle: .alert)
+          alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+          present(alertController, animated: true, completion: nil)
+        }
+          
+    }
+  }
 }
+    
+    
+    
+//    guard let email = usernameTextField.text, let password = passwordTextField.text else {
+//      return
+//    }
+//
+//
+//    if email == savedEmail && password == savedPassword {
+//      let homePageVC = HomePageViewController()
+//      navigationController.pushViewController(homePageVC, animated: true)
+//    } else {
+//      let alertController = UIAlertController(title: "Error", message: "Invalid email or password", preferredStyle: .alert)
+//      alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//      present(alertController, animated: true, completion: nil)
+//    }
+          
+
+
