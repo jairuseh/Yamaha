@@ -1,5 +1,5 @@
 //
-//  ProductsController.swift
+//  LSTALLViewController.swift
 //  Yamaha
 //
 //  Created by SmartVenture on 5/1/23.
@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class ProductsController: UIViewController {
+class LSTALLViewController: UIViewController {
   
   // Variables
-  private let products: [Product] = Product.getMockProductArray()
+  private let lstAll: [LstAll] = LstAll.getMockArrayLstAll()
   
   // UI Components
 //  let tableView: UITableView = {
@@ -21,7 +21,7 @@ class ProductsController: UIViewController {
 //    return tv
 //  }()
   
-  let productCollectionView: UICollectionView = {
+  let lstAllCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
     let spacing: CGFloat = 10.0
@@ -38,8 +38,8 @@ class ProductsController: UIViewController {
     super.viewDidLoad()
     self.setupUI()
     
-    productCollectionView.delegate = self
-    productCollectionView.dataSource = self
+    lstAllCollectionView.delegate = self
+    lstAllCollectionView.dataSource = self
     
   }
   
@@ -54,33 +54,34 @@ class ProductsController: UIViewController {
     
     self.view.addSubview(navBar)
     
-    self.view.addSubview(productCollectionView)
-    self.productCollectionView.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(lstAllCollectionView)
+    self.lstAllCollectionView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      self.productCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
-      self.productCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -tabBarHeight),
-      self.productCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-      self.productCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+      self.lstAllCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+      self.lstAllCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -tabBarHeight),
+      self.lstAllCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+      self.lstAllCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
     ])
   }
 }
 
-extension ProductsController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+
+extension LSTALLViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.products.count
+    return self.lstAll.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
+    guard let cell = lstAllCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
       fatalError("Unable to dequeue ProductCell")
     }
-    let product = self.products[indexPath.item]
-    cell.configure(with: product
+    let lstAll = self.lstAll[indexPath.item]
+    cell.configure(with: lstAll
     )
-    
-    
+
+
     return cell
   }
-  
 }

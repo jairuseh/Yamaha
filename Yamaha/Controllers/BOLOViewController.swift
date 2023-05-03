@@ -1,17 +1,17 @@
 //
-//  ProductsController.swift
+//  BOLOViewController.swift
 //  Yamaha
 //
 //  Created by SmartVenture on 5/1/23.
 //
 
+
 import Foundation
 import UIKit
 
-class ProductsController: UIViewController {
+class BOLOViewController: UIViewController {
   
-  // Variables
-  private let products: [Product] = Product.getMockProductArray()
+  private let bolo: [Bolo] = Bolo.mockArrayBolo()
   
   // UI Components
 //  let tableView: UITableView = {
@@ -21,7 +21,7 @@ class ProductsController: UIViewController {
 //    return tv
 //  }()
   
-  let productCollectionView: UICollectionView = {
+  let boloCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
     let spacing: CGFloat = 10.0
@@ -38,8 +38,8 @@ class ProductsController: UIViewController {
     super.viewDidLoad()
     self.setupUI()
     
-    productCollectionView.delegate = self
-    productCollectionView.dataSource = self
+    boloCollectionView.delegate = self
+    boloCollectionView.dataSource = self
     
   }
   
@@ -54,33 +54,34 @@ class ProductsController: UIViewController {
     
     self.view.addSubview(navBar)
     
-    self.view.addSubview(productCollectionView)
-    self.productCollectionView.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(boloCollectionView)
+    self.boloCollectionView.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
-      self.productCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
-      self.productCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -tabBarHeight),
-      self.productCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-      self.productCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+      self.boloCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+      self.boloCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -tabBarHeight),
+      self.boloCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+      self.boloCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
     ])
   }
 }
 
-extension ProductsController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+
+extension BOLOViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.products.count
+    return self.bolo.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
+    guard let cell = boloCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
       fatalError("Unable to dequeue ProductCell")
     }
-    let product = self.products[indexPath.item]
-    cell.configure(with: product
+    let bolo = self.bolo[indexPath.item]
+    cell.configure(with: bolo
     )
-    
-    
+
+
     return cell
   }
-  
 }

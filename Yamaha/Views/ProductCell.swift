@@ -65,11 +65,23 @@ class ProductCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configure(with product: Product) {
-    self.product = product
-    
-    self.productName.text = product.name.description
-    self.productPrice.text = product.price.description
+  public func configure(with model: Any) {
+    if let product = model as? Product {
+      self.productName.text = product.name.description
+      self.productPrice.text = product.price.description
+    } else if let lstAll = model as? LstAll {
+      self.productName.text = lstAll.lstAllName.description
+      self.productPrice.text = lstAll.lstAllPrice.description
+    } else if let bolo = model as? Bolo {
+      self.productName.text = bolo.boloName.description
+      self.productPrice.text = bolo.boloPrice.description
+    } else {
+      fatalError("Invalid model type")
+    }
+//    self.product = product
+//
+//    self.productName.text = product.name.description
+//    self.productPrice.text = product.price.description
   }
   
   // Setup UI
