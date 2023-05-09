@@ -13,7 +13,7 @@ class ProductCell: UICollectionViewCell {
   static let identifier = "ProductCell"
   
   // Variables
-  private(set) var product: Product!
+  private(set) var displayedProduct: Product!
   
   
   // UI Components
@@ -57,19 +57,17 @@ class ProductCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configure(with model: Any) {
-    if let product = model as? Product {
-      self.productName.text = product.name.description
-      self.productPrice.text = product.price.description
-    } else if let lstAll = model as? LstAll {
-      self.productName.text = lstAll.lstAllName.description
-      self.productPrice.text = lstAll.lstAllPrice.description
-    } else if let bolo = model as? Bolo {
-      self.productName.text = bolo.boloName.description
-      self.productPrice.text = bolo.boloPrice.description
-    } else {
-      fatalError("Invalid model type")
-    }
+  public func setProduct(with product: Product) {
+    
+    let formattedPrice = String(format: "%.2f", product.price.retailPrice)
+    self.productName.text = product.name
+    self.productPrice.text = formattedPrice
+    let url = URL(string: product.image[0])
+
+    let imageData = try? Data(contentsOf: url!)
+        if let imageData = imageData {
+          self.productImage.image = UIImage(data: imageData)
+        }
   }
   
   // Setup UI
