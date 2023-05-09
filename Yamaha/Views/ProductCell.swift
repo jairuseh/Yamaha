@@ -67,9 +67,10 @@ class ProductCell: UICollectionViewCell {
     let url = URL(string: product.image[0])
 
     let imageData = try? Data(contentsOf: url!)
-        if let imageData = imageData {
-          self.productImage.image = UIImage(data: imageData)
-        }
+    if let imageData = imageData {
+      self.productImage.image = UIImage(data: imageData)
+    }
+  
   }
   
   public func setLstAll(with lstAll: LstAll) {
