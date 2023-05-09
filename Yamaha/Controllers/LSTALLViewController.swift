@@ -11,7 +11,7 @@ import UIKit
 class LSTALLViewController: UIViewController {
   
   // Variables
-  private let lstAll: [LstAll] = LstAll.getMockArrayLstAll()
+  private var lstAll: [LstAll] = []
   
   let lstAllCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -32,6 +32,15 @@ class LSTALLViewController: UIViewController {
     
     lstAllCollectionView.delegate = self
     lstAllCollectionView.dataSource = self
+    
+    ApiHandler.sharedInstance.getLstAllList { apiData in
+      self.lstAll = apiData
+      print("RESULT: \(apiData)")
+      DispatchQueue.main.async {
+        self.lstAllCollectionView.reloadData()
+      }
+      
+    }
     
   }
   
