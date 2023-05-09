@@ -25,6 +25,7 @@
 		BEA6610A2A02011700AC398A /* LstAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA661092A02011700AC398A /* LstAll.swift */; };
 		BEA6610C2A02275700AC398A /* Bolo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA6610B2A02275700AC398A /* Bolo.swift */; };
 		BEB3E1BF2A08C72F00FBDBC1 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3E1BE2A08C72F00FBDBC1 /* ApiHandler.swift */; };
+		BEB3E1C12A0A393300FBDBC1 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3E1C02A0A393300FBDBC1 /* ProductModel.swift */; };
 		BEBE0ED62A03612F00E9B9E1 /* IList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE0ED52A03612E00E9B9E1 /* IList.swift */; };
 		BEBE0EDA2A03631700E9B9E1 /* GenericListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE0ED92A03631700E9B9E1 /* GenericListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		BEA661092A02011700AC398A /* LstAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstAll.swift; sourceTree = "<group>"; };
 		BEA6610B2A02275700AC398A /* Bolo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolo.swift; sourceTree = "<group>"; };
 		BEB3E1BE2A08C72F00FBDBC1 /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		BEB3E1C02A0A393300FBDBC1 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		BEBE0ED52A03612E00E9B9E1 /* IList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IList.swift; sourceTree = "<group>"; };
 		BEBE0ED92A03631700E9B9E1 /* GenericListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListViewController.swift; sourceTree = "<group>"; };
 		C308B027D096DA9530E39ADB /* Pods-Yamaha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamaha.release.xcconfig"; path = "Target Support Files/Pods-Yamaha/Pods-Yamaha.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				BEA661092A02011700AC398A /* LstAll.swift */,
 				BEA6610B2A02275700AC398A /* Bolo.swift */,
 				BEBE0ED52A03612E00E9B9E1 /* IList.swift */,
+				BEB3E1C02A0A393300FBDBC1 /* ProductModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				BEB3E1BF2A08C72F00FBDBC1 /* ApiHandler.swift in Sources */,
 				BEA65F9C29FFAB9C00AC398A /* HomePageViewController.swift in Sources */,
 				BEA65FA029FFAE5E00AC398A /* LSTALLViewController.swift in Sources */,
+				BEB3E1C12A0A393300FBDBC1 /* ProductModel.swift in Sources */,
 				BEA661062A00EC8A00AC398A /* ProductCell.swift in Sources */,
 				BEA65FA229FFAE8500AC398A /* BOLOViewController.swift in Sources */,
 				BEBE0ED62A03612F00E9B9E1 /* IList.swift in Sources */,

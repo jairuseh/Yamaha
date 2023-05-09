@@ -22,7 +22,7 @@ class ApiHandler {
       case .success(let data):
         
         do {
-          let jsonData = try JSONDecoder().decode(Model.self, from: data!)
+          let jsonData = try JSONDecoder().decode(ProductModel.self, from: data!)
           print("Sample: \(jsonData.d)")
           handler(jsonData.d)
         } catch {
@@ -38,21 +38,4 @@ class ApiHandler {
   
 }
 
-struct Model: Decodable {
-//  let userId: Int
-//  let id: Int
-//  let title: String
-//  let body: String
-  let d: [ProductResponse]
-}
 
-struct ProductResponse: Decodable {
-  let name: String
-  let description: String
-  let productPrice: ProductPrice
-  let imageUrls: [String]
-}
-
-struct ProductPrice: Decodable {
-  let retailPrice: Double
-}

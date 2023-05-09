@@ -14,7 +14,7 @@ class ProductCell: UICollectionViewCell {
   
   // Variables
 //  private(set) var product: Product!
-  private(set) var model: Model!
+  private(set) var model: ProductModel!
   
   
   // UI Components
