@@ -115,11 +115,12 @@ class ProductCell: UICollectionViewCell {
       wrapTwoLabels.leadingAnchor.constraint(equalTo: productImage.leadingAnchor),
       wrapTwoLabels.trailingAnchor.constraint(equalTo: productImage.trailingAnchor),
       
-      productName.leadingAnchor.constraint(equalTo: wrapTwoLabels.leadingAnchor, constant: 20),
+      productName.leadingAnchor.constraint(equalTo: wrapTwoLabels.leadingAnchor),
+      productName.widthAnchor.constraint(equalTo: wrapTwoLabels.widthAnchor, multiplier: 0.5),
       
-      productPrice.trailingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: -20)
-
-        ])
+      productPrice.trailingAnchor.constraint(equalTo: productImage.trailingAnchor)
+      
+      ])
   }
   
   
