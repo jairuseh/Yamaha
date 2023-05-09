@@ -35,6 +35,16 @@ class ProductsController: UIViewController {
     productCollectionView.delegate = self
     productCollectionView.dataSource = self
     
+    ApiHandler.sharedInstance.getProductList { apiData in
+          self.products = apiData
+         print("RESULT: \(apiData)")
+          DispatchQueue.main.async {
+            
+            self.productCollectionView.reloadData()
+          }
+          
+        }
+    
   }
   
   
@@ -70,8 +80,8 @@ extension ProductsController: UICollectionViewDelegate, UICollectionViewDataSour
       fatalError("Unable to dequeue ProductCell")
     }
     let product = self.products[indexPath.item]
-    cell.configure(with: product
-    )
+    cell.setProduct(with: product)
+    
     
     
     return cell
