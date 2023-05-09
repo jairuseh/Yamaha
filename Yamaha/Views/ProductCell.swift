@@ -74,7 +74,15 @@ class ProductCell: UICollectionViewCell {
   }
   
   public func setLstAll(with lstAll: LstAll) {
+    self.productName.text = lstAll.lstAllName
+    self.productPrice.text = "\(lstAll.quantity) qty"
     
+    let url = URL(string: lstAll.image)
+
+    let imageData = try? Data(contentsOf: url!)
+    if let imageData = imageData {
+      self.productImage.image = UIImage(data: imageData)
+    }
   }
   
   public func setBolo(with bolo: Bolo) {
