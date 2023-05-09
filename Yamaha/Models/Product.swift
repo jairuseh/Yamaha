@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct Product {
-  let id: Int
-  let name: String
-  let price: Double
+struct Product: Decodable {
+  var id: Int
+  var name: String
+  var price: Double
+  
+  var productImage: URL? {
+    return URL(string: "https://picsum.photos/200/300")
+  }
   
 }
 
@@ -28,6 +32,7 @@ extension Product {
       Product(id: 8, name: "Polkadot", price: 12),
       Product(id: 9, name: "Solana", price: 2565),
       Product(id: 10, name: "Polkadot", price: 523),
+      Product(id: 11, name: "Polkadot1", price: 1523),
     ]
   }
 }

@@ -77,9 +77,8 @@ extension BOLOViewController: UICollectionViewDelegate, UICollectionViewDataSour
     guard let cell = boloCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
       fatalError("Unable to dequeue ProductCell")
     }
-    let bolo = self.bolo[indexPath.item]
-    cell.configure(with: bolo
-    )
+//    let bolo = self.bolo[indexPath.item]
+//    cell.configure(with: bolo)
 
 
     return cell

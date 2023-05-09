@@ -13,6 +13,9 @@ class HomePageViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Products"
+    
+    
+    
     let tabBarController = UITabBarController()
     
     let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action:  #selector(logout))
@@ -20,8 +23,8 @@ class HomePageViewController: UIViewController {
     navigationItem.rightBarButtonItem = logoutButton
 
     let productsVC = ProductsController()
-    let lstallVC = LSTALLViewController()
-    let boloVC = BOLOViewController()
+    let lstallVC = GenericListViewController.makeGenericList(items: LstAll.getMockArrayLstAll())
+    let boloVC = GenericListViewController.makeGenericList(items: Bolo.mockArrayBolo())
 
     productsVC.title = "Products"
     lstallVC.title = "LSTALL"
