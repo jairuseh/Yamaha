@@ -14,13 +14,7 @@ class ProductsController: UIViewController {
   private let products: [Product] = Product.getMockProductArray()
   
   // UI Components
-//  let tableView: UITableView = {
-//    let tv = UITableView()
-//    tv.backgroundColor = .systemBackground
-//    tv.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-//    return tv
-//  }()
-  
+
   let productCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)

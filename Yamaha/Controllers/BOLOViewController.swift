@@ -13,14 +13,6 @@ class BOLOViewController: UIViewController {
   
   private let bolo: [Bolo] = Bolo.mockArrayBolo()
   
-  // UI Components
-//  let tableView: UITableView = {
-//    let tv = UITableView()
-//    tv.backgroundColor = .systemBackground
-//    tv.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-//    return tv
-//  }()
-  
   let boloCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)

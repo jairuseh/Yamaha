@@ -18,14 +18,6 @@ class ProductCell: UICollectionViewCell {
   
   // UI Components
   
-//  private let stackView: UIStackView = {
-//    let sv = UIStackView()
-//    sv.axis = .vertical
-//    sv.spacing = 8
-//    sv.alignment = .center
-//    return sv
-//  }()
-  
   private let wrapTwoLabels: UIView = {
     let wtl = UIView()
     
@@ -78,10 +70,6 @@ class ProductCell: UICollectionViewCell {
     } else {
       fatalError("Invalid model type")
     }
-//    self.product = product
-//
-//    self.productName.text = product.name.description
-//    self.productPrice.text = product.price.description
   }
   
   // Setup UI
@@ -114,11 +102,6 @@ class ProductCell: UICollectionViewCell {
       
       productPrice.trailingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: -20)
 
-      
-//      stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-//      stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-//      stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
-      
         ])
   }
   
