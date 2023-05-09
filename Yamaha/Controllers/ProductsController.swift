@@ -11,7 +11,7 @@ import UIKit
 class ProductsController: UIViewController {
   
   // Variables
-  private let products: [Product] = Product.getMockProductArray()
+  private var products: [Product] = []
   
   // UI Components
 
