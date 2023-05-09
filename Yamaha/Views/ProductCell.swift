@@ -13,7 +13,8 @@ class ProductCell: UICollectionViewCell {
   static let identifier = "ProductCell"
   
   // Variables
-  private(set) var product: Product!
+//  private(set) var product: Product!
+  private(set) var model: Model!
   
   
   // UI Components
@@ -32,7 +33,7 @@ class ProductCell: UICollectionViewCell {
     return wtl
   }()
   
-  private let productImage: UIImageView = {
+  private let imageView: UIImageView = {
     let pi = UIImageView()
     pi.image = UIImage(systemName: "questionmark")
     pi.contentMode = .scaleAspectFit
@@ -41,7 +42,8 @@ class ProductCell: UICollectionViewCell {
     return pi
   }()
   
-  private let productName: UILabel = {
+  
+  let productName: UILabel = {
     let label = UILabel()
     label.text = "Title"
     label.textColor = .label
@@ -65,19 +67,47 @@ class ProductCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configure(with model: Any) {
-    if let product = model as? Product {
-      self.productName.text = product.name.description
-      self.productPrice.text = product.price.description
-    } else if let lstAll = model as? LstAll {
-      self.productName.text = lstAll.lstAllName.description
-      self.productPrice.text = lstAll.lstAllPrice.description
-    } else if let bolo = model as? Bolo {
-      self.productName.text = bolo.boloName.description
-      self.productPrice.text = bolo.boloPrice.description
-    } else {
-      fatalError("Invalid model type")
-    }
+  
+  
+//  public func configure(withItem item: IList) {
+//    self.productName.text = item.i_name
+//    self.productPrice.text = item.i_price.description
+//    
+//    
+//    }
+
+  
+  public func configure(with model: ProductResponse) {
+    
+    let formattedPrice = String(format: "%.2f", model.productPrice.retailPrice)
+    self.productName.text = model.name
+    self.productPrice.text = formattedPrice
+    let url = URL(string: model.imageUrls[0])
+    print("PICTURE: \(model.imageUrls[0])")
+    
+    let imageData = try? Data(contentsOf: url!)
+        if let imageData = imageData {
+            self.imageView.image = UIImage(data: imageData)
+        }
+    
+
+//  public func configure(with model: Any) {
+//    if let product = model as? Product {
+//      self.productName.text = product.name.description
+//      self.productPrice.text = product.price.description
+//    } else if let lstAll = model as? LstAll {
+//      self.productName.text = lstAll.lstAllName.description
+//      self.productPrice.text = lstAll.lstAllPrice.description
+//    } else if let bolo = model as? Bolo {
+//      self.productName.text = bolo.boloName.description
+//      self.productPrice.text = bolo.boloPrice.description
+//    } else if let result = model as? Model {
+//      print("Result2: ")
+//      self.productName.text = result.title
+//      self.productPrice.text = result.id.description
+//    } else {
+//      fatalError("Invalid model type")
+//    }
 //    self.product = product
 //
 //    self.productName.text = product.name.description
@@ -87,13 +117,13 @@ class ProductCell: UICollectionViewCell {
   // Setup UI
   private func setupUI() {
   
-    self.contentView.addSubview(productImage)
+    self.contentView.addSubview(imageView)
     self.contentView.addSubview(wrapTwoLabels)
     
     wrapTwoLabels.addSubview(productName)
     wrapTwoLabels.addSubview(productPrice)
     
-    productImage.translatesAutoresizingMaskIntoConstraints = false
+    imageView.translatesAutoresizingMaskIntoConstraints = false
     productName.translatesAutoresizingMaskIntoConstraints = false
     productPrice.translatesAutoresizingMaskIntoConstraints = false
     wrapTwoLabels.translatesAutoresizingMaskIntoConstraints = false
@@ -101,23 +131,21 @@ class ProductCell: UICollectionViewCell {
     
     NSLayoutConstraint.activate([
       
-      productImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-      productImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
-      productImage.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10),
-      productImage.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6),
+      imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
+      imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+      imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10),
+      imageView.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.6),
      
-      wrapTwoLabels.topAnchor.constraint(equalTo: productImage.bottomAnchor),
-      wrapTwoLabels.leadingAnchor.constraint(equalTo: productImage.leadingAnchor),
-      wrapTwoLabels.trailingAnchor.constraint(equalTo: productImage.trailingAnchor),
+      wrapTwoLabels.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+      wrapTwoLabels.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
+      wrapTwoLabels.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
       
-      productName.leadingAnchor.constraint(equalTo: wrapTwoLabels.leadingAnchor, constant: 20),
+      productName.leadingAnchor.constraint(equalTo: wrapTwoLabels.leadingAnchor),
+      productName.widthAnchor.constraint(equalTo: wrapTwoLabels.widthAnchor, multiplier: 0.5),
       
-      productPrice.trailingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: -20)
+      productPrice.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+      
 
-      
-//      stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-//      stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-//      stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
       
         ])
   }

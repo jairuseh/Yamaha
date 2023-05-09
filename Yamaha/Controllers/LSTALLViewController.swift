@@ -77,9 +77,8 @@ extension LSTALLViewController: UICollectionViewDelegate, UICollectionViewDataSo
     guard let cell = lstAllCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
       fatalError("Unable to dequeue ProductCell")
     }
-    let lstAll = self.lstAll[indexPath.item]
-    cell.configure(with: lstAll
-    )
+//    let lstAll = self.lstAll[indexPath.item]
+//    cell.configure(with: lstAll)
 
 
     return cell

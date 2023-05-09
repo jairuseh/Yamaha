@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		829B4930D0C3589AEFCB1B9D /* Pods_Yamaha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702FB0D0FD537DB9D32398EC /* Pods_Yamaha.framework */; };
 		BEA65F8629FBCD9B00AC398A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8529FBCD9B00AC398A /* AppDelegate.swift */; };
 		BEA65F8829FBCD9B00AC398A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8729FBCD9B00AC398A /* SceneDelegate.swift */; };
 		BEA65F8A29FBCD9B00AC398A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA65F8929FBCD9B00AC398A /* LoginViewController.swift */; };
@@ -23,9 +24,14 @@
 		BEA661082A00F58E00AC398A /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA661072A00F58E00AC398A /* ProductsController.swift */; };
 		BEA6610A2A02011700AC398A /* LstAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA661092A02011700AC398A /* LstAll.swift */; };
 		BEA6610C2A02275700AC398A /* Bolo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA6610B2A02275700AC398A /* Bolo.swift */; };
+		BEB3E1BF2A08C72F00FBDBC1 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3E1BE2A08C72F00FBDBC1 /* ApiHandler.swift */; };
+		BEBE0ED62A03612F00E9B9E1 /* IList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE0ED52A03612E00E9B9E1 /* IList.swift */; };
+		BEBE0EDA2A03631700E9B9E1 /* GenericListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE0ED92A03631700E9B9E1 /* GenericListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64FB1E7D0247EF88A0A284BA /* Pods-Yamaha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamaha.debug.xcconfig"; path = "Target Support Files/Pods-Yamaha/Pods-Yamaha.debug.xcconfig"; sourceTree = "<group>"; };
+		702FB0D0FD537DB9D32398EC /* Pods_Yamaha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yamaha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA65F8229FBCD9B00AC398A /* Yamaha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yamaha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA65F8529FBCD9B00AC398A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA65F8729FBCD9B00AC398A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +50,10 @@
 		BEA661072A00F58E00AC398A /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
 		BEA661092A02011700AC398A /* LstAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstAll.swift; sourceTree = "<group>"; };
 		BEA6610B2A02275700AC398A /* Bolo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolo.swift; sourceTree = "<group>"; };
+		BEB3E1BE2A08C72F00FBDBC1 /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		BEBE0ED52A03612E00E9B9E1 /* IList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IList.swift; sourceTree = "<group>"; };
+		BEBE0ED92A03631700E9B9E1 /* GenericListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListViewController.swift; sourceTree = "<group>"; };
+		C308B027D096DA9530E39ADB /* Pods-Yamaha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamaha.release.xcconfig"; path = "Target Support Files/Pods-Yamaha/Pods-Yamaha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +61,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				829B4930D0C3589AEFCB1B9D /* Pods_Yamaha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B71D70D82D3A3896E0FE34A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64FB1E7D0247EF88A0A284BA /* Pods-Yamaha.debug.xcconfig */,
+				C308B027D096DA9530E39ADB /* Pods-Yamaha.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BEA65F7929FBCD9B00AC398A = {
 			isa = PBXGroup;
 			children = (
 				BEA65F8429FBCD9B00AC398A /* Yamaha */,
 				BEA65F8329FBCD9B00AC398A /* Products */,
+				B71D70D82D3A3896E0FE34A3 /* Pods */,
+				E6D07A31855604ACF9630C90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +126,7 @@
 		BEA660FD2A00EA4300AC398A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				BEB3E1BE2A08C72F00FBDBC1 /* ApiHandler.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -114,6 +137,7 @@
 				BEA661032A00EA9600AC398A /* Product.swift */,
 				BEA661092A02011700AC398A /* LstAll.swift */,
 				BEA6610B2A02275700AC398A /* Bolo.swift */,
+				BEBE0ED52A03612E00E9B9E1 /* IList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,10 +163,19 @@
 				BEA65F9B29FFAB9C00AC398A /* HomePageViewController.swift */,
 				BEA65F8929FBCD9B00AC398A /* LoginViewController.swift */,
 				BEA661072A00F58E00AC398A /* ProductsController.swift */,
+				BEBE0ED92A03631700E9B9E1 /* GenericListViewController.swift */,
 				BEA65F9F29FFAE5E00AC398A /* LSTALLViewController.swift */,
 				BEA65FA129FFAE8500AC398A /* BOLOViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E6D07A31855604ACF9630C90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				702FB0D0FD537DB9D32398EC /* Pods_Yamaha.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEA65F9629FBCD9F00AC398A /* Build configuration list for PBXNativeTarget "Yamaha" */;
 			buildPhases = (
+				6CF0B3F146D02945876380E9 /* [CP] Check Pods Manifest.lock */,
 				BEA65F7E29FBCD9B00AC398A /* Sources */,
 				BEA65F7F29FBCD9B00AC398A /* Frameworks */,
 				BEA65F8029FBCD9B00AC398A /* Resources */,
+				535BB7D47C96EF9AD5EC7B9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +245,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		535BB7D47C96EF9AD5EC7B9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yamaha/Pods-Yamaha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yamaha/Pods-Yamaha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yamaha/Pods-Yamaha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CF0B3F146D02945876380E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yamaha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BEA65F7E29FBCD9B00AC398A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,6 +294,7 @@
 			files = (
 				BEA65F8A29FBCD9B00AC398A /* LoginViewController.swift in Sources */,
 				BEA65FA429FFB2EA00AC398A /* Sample.swift in Sources */,
+				BEBE0EDA2A03631700E9B9E1 /* GenericListViewController.swift in Sources */,
 				BEA661082A00F58E00AC398A /* ProductsController.swift in Sources */,
 				BEA65F8629FBCD9B00AC398A /* AppDelegate.swift in Sources */,
 				BEA6610A2A02011700AC398A /* LstAll.swift in Sources */,
@@ -224,10 +302,12 @@
 				BEA661042A00EA9600AC398A /* Product.swift in Sources */,
 				BEA6610C2A02275700AC398A /* Bolo.swift in Sources */,
 				BEA660FC2A00E94300AC398A /* Constants.swift in Sources */,
+				BEB3E1BF2A08C72F00FBDBC1 /* ApiHandler.swift in Sources */,
 				BEA65F9C29FFAB9C00AC398A /* HomePageViewController.swift in Sources */,
 				BEA65FA029FFAE5E00AC398A /* LSTALLViewController.swift in Sources */,
 				BEA661062A00EC8A00AC398A /* ProductCell.swift in Sources */,
 				BEA65FA229FFAE8500AC398A /* BOLOViewController.swift in Sources */,
+				BEBE0ED62A03612F00E9B9E1 /* IList.swift in Sources */,
 				BEA65F9A29FBCED500AC398A /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +444,7 @@
 		};
 		BEA65F9729FBCD9F00AC398A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64FB1E7D0247EF88A0A284BA /* Pods-Yamaha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,6 +472,7 @@
 		};
 		BEA65F9829FBCD9F00AC398A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C308B027D096DA9530E39ADB /* Pods-Yamaha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

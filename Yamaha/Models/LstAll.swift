@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct LstAll {
+struct LstAll: Decodable {
   let id: Int
   let lstAllName: String
   let lstAllPrice: Double
+  
+  var lstAllImage: URL? {
+    return URL(string: "https://picsum.photos/200/300")
+  }
 }
 
 extension LstAll {

@@ -8,18 +8,17 @@
 import Foundation
 import UIKit
 
+
 class ProductsController: UIViewController {
   
   // Variables
-  private let products: [Product] = Product.getMockProductArray()
+  private var products: [Product] = []
+
+  private var productsV2: [Product] = Product.getMockProductArray()
+  
+  private var result: [ProductResponse] = []
   
   // UI Components
-//  let tableView: UITableView = {
-//    let tv = UITableView()
-//    tv.backgroundColor = .systemBackground
-//    tv.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-//    return tv
-//  }()
   
   let productCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -38,6 +37,16 @@ class ProductsController: UIViewController {
     super.viewDidLoad()
     self.setupUI()
     
+    ApiHandler.sharedInstance.fetchingAPIData { apiData in
+      self.result = apiData
+     print("RESULT: \(apiData)")
+      DispatchQueue.main.async {
+        
+        self.productCollectionView.reloadData()
+      }
+      
+    }
+  
     productCollectionView.delegate = self
     productCollectionView.dataSource = self
     
@@ -68,17 +77,16 @@ class ProductsController: UIViewController {
 
 extension ProductsController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.products.count
+    print("COUNT: \(self.result.count)")
+    return self.result.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
       fatalError("Unable to dequeue ProductCell")
     }
-    let product = self.products[indexPath.item]
-    cell.configure(with: product
-    )
-    
+    let product = self.result[indexPath.item]
+    cell.configure(with: product)
     
     return cell
   }

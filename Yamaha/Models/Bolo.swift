@@ -11,6 +11,10 @@ struct Bolo {
   let id: Int
   let boloName: String
   let boloPrice: Double
+  
+  var boloImage: URL? {
+    return URL(string: "https://picsum.photos/200/300")
+  }
 }
 
 extension Bolo {
