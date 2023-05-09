@@ -14,6 +14,8 @@ class ProductCell: UICollectionViewCell {
   
   // Variables
   private(set) var displayedProduct: Product!
+  private(set) var displayedLstAll: LstAll!
+  private(set) var displayedBolo: Bolo!
   
   
   // UI Components
@@ -68,6 +70,14 @@ class ProductCell: UICollectionViewCell {
         if let imageData = imageData {
           self.productImage.image = UIImage(data: imageData)
         }
+  }
+  
+  public func setLstAll(with lstAll: LstAll) {
+    
+  }
+  
+  public func setBolo(with bolo: Bolo) {
+    
   }
   
   // Setup UI

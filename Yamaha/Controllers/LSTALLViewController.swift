@@ -70,8 +70,7 @@ extension LSTALLViewController: UICollectionViewDelegate, UICollectionViewDataSo
       fatalError("Unable to dequeue ProductCell")
     }
     let lstAll = self.lstAll[indexPath.item]
-    cell.configure(with: lstAll
-    )
+    cell.setLstAll(with: lstAll)
 
 
     return cell

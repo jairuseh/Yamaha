@@ -70,8 +70,7 @@ extension BOLOViewController: UICollectionViewDelegate, UICollectionViewDataSour
       fatalError("Unable to dequeue ProductCell")
     }
     let bolo = self.bolo[indexPath.item]
-    cell.configure(with: bolo
-    )
+    cell.setBolo(with: bolo)
 
 
     return cell
