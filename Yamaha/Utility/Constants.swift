@@ -10,11 +10,7 @@ import Foundation
 struct Constants {
   
   // Mark: - API
-  static let scheme = "https"
-  static let baseURL = "pro-api.coinmarketcap.com"
-  static let port: Int? = nil
-  static let fullURL = "https://pro-api.coinmarketcap.com/"
-  
-  static let API_KEY = "5c9019eb-c5f1-4f76-871f-f9e7310aa0ad"
+  static let baseUrl = "https://dev.lstr.app/"
+  static let token = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImI2NzE1ZTJmZjcxZDIyMjQ5ODk1MDAyMzY2ODMwNDc3Mjg2Nzg0ZTMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGVzdGVyIFplcm8iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbHN0ci02NTJkNyIsImF1ZCI6ImxzdHItNjUyZDciLCJhdXRoX3RpbWUiOjE2ODM2MjQ1MzQsInVzZXJfaWQiOiJIMDBJR2RLV2dIY0p5MmdLanVpdmI1cnNRV0YzIiwic3ViIjoiSDAwSUdkS1dnSGNKeTJnS2p1aXZiNXJzUVdGMyIsImlhdCI6MTY4MzYyNDUzNCwiZXhwIjoxNjgzNjI4MTM0LCJlbWFpbCI6ImludnJlZjFAZW1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImludnJlZjFAZW1haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.QzJYA3p8Qx5CpnLhhMfxAzHiqGdnE3ATTkn-gEPaIc-JNWrHFosCQn7WyW8dsftK0lYZrpNc97tCLbBDyazgcHq9sZ3rpf-Wmr98qYzXuVdl913sgol8B3IMx6LsK8aI8g4ulIytLXaAljCJ2ea9ToYhH_t8Fwvp7EJr4g7JzWj2hSxUEfO_8ptFAbd4Z5cD61Tl7SjQEUpEyqYeLUjzRL7AJqC3tMYvKnJHHJMHm26BysFW2Tfru29gdMNzab2wtAmpnjeN-PbtUC1QkAGzQGBz9R89MmBIdHHhcT3q7DalwQgUY-Aii9xgTejhvSflthfC7DIxY-wYfedyZnTs6A"
   
 }
