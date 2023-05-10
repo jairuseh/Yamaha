@@ -74,8 +74,7 @@ class ProductCell: UICollectionViewCell {
     
     let url = URL(string: lstAll.image)
 
-    let imageData = try? Data(contentsOf: url!)
-    if let imageData = imageData {
+    if let u = url, let imageData = try? Data(contentsOf: u) {
       self.productImage.image = UIImage(data: imageData)
     }
   }
