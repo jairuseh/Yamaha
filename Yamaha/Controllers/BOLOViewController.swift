@@ -11,15 +11,7 @@ import UIKit
 
 class BOLOViewController: UIViewController {
   
-  private let bolo: [Bolo] = Bolo.mockArrayBolo()
-  
-  // UI Components
-//  let tableView: UITableView = {
-//    let tv = UITableView()
-//    tv.backgroundColor = .systemBackground
-//    tv.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-//    return tv
-//  }()
+  private var bolo: [Bolo] = []
   
   let boloCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -28,7 +20,7 @@ class BOLOViewController: UIViewController {
     let width = UIScreen.main.bounds.width - (spacing * 3.0)
     layout.itemSize = CGSize(width: width / 2, height: 200)
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    cv.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
+    cv.register(BoloCell.self, forCellWithReuseIdentifier: BoloCell.identifier)
     return cv
   }()
   
@@ -40,6 +32,13 @@ class BOLOViewController: UIViewController {
     
     boloCollectionView.delegate = self
     boloCollectionView.dataSource = self
+    
+    ApiHandler.sharedInstance.getBoloList { apiData in
+      self.bolo = apiData
+      DispatchQueue.main.async {
+        self.boloCollectionView.reloadData()
+      }
+    }
     
   }
   
@@ -74,12 +73,11 @@ extension BOLOViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = boloCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
-      fatalError("Unable to dequeue ProductCell")
+    guard let cell = boloCollectionView.dequeueReusableCell(withReuseIdentifier: BoloCell.identifier, for: indexPath) as? BoloCell else {
+      fatalError("Unable to dequeue BoloCell")
     }
     let bolo = self.bolo[indexPath.item]
-    cell.configure(with: bolo
-    )
+    cell.setBolo(with: bolo)
 
 
     return cell

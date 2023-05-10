@@ -11,16 +11,10 @@ import UIKit
 class ProductsController: UIViewController {
   
   // Variables
-  private let products: [Product] = Product.getMockProductArray()
+  private var products: [Product] = []
   
   // UI Components
-//  let tableView: UITableView = {
-//    let tv = UITableView()
-//    tv.backgroundColor = .systemBackground
-//    tv.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-//    return tv
-//  }()
-  
+
   let productCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
@@ -40,6 +34,16 @@ class ProductsController: UIViewController {
     
     productCollectionView.delegate = self
     productCollectionView.dataSource = self
+    
+    ApiHandler.sharedInstance.getProductList { apiData in
+          self.products = apiData
+         print("RESULT: \(apiData)")
+          DispatchQueue.main.async {
+            
+            self.productCollectionView.reloadData()
+          }
+          
+        }
     
   }
   
@@ -76,8 +80,8 @@ extension ProductsController: UICollectionViewDelegate, UICollectionViewDataSour
       fatalError("Unable to dequeue ProductCell")
     }
     let product = self.products[indexPath.item]
-    cell.configure(with: product
-    )
+    cell.setProduct(with: product)
+    
     
     
     return cell

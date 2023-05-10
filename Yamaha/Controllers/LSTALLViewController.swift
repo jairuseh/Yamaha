@@ -11,15 +11,7 @@ import UIKit
 class LSTALLViewController: UIViewController {
   
   // Variables
-  private let lstAll: [LstAll] = LstAll.getMockArrayLstAll()
-  
-  // UI Components
-//  let tableView: UITableView = {
-//    let tv = UITableView()
-//    tv.backgroundColor = .systemBackground
-//    tv.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
-//    return tv
-//  }()
+  private var lstAll: [LstAll] = []
   
   let lstAllCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -28,7 +20,7 @@ class LSTALLViewController: UIViewController {
     let width = UIScreen.main.bounds.width - (spacing * 3.0)
     layout.itemSize = CGSize(width: width / 2, height: 200)
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    cv.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
+    cv.register(LstAllCell.self, forCellWithReuseIdentifier: LstAllCell.identifier)
     return cv
   }()
   
@@ -40,6 +32,15 @@ class LSTALLViewController: UIViewController {
     
     lstAllCollectionView.delegate = self
     lstAllCollectionView.dataSource = self
+    
+    ApiHandler.sharedInstance.getLstAllList { apiData in
+      self.lstAll = apiData
+      print("RESULT: \(apiData)")
+      DispatchQueue.main.async {
+        self.lstAllCollectionView.reloadData()
+      }
+      
+    }
     
   }
   
@@ -74,12 +75,11 @@ extension LSTALLViewController: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = lstAllCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
-      fatalError("Unable to dequeue ProductCell")
+    guard let cell = lstAllCollectionView.dequeueReusableCell(withReuseIdentifier: LstAllCell.identifier, for: indexPath) as? LstAllCell else {
+      fatalError("Unable to dequeue LstAllCell")
     }
     let lstAll = self.lstAll[indexPath.item]
-    cell.configure(with: lstAll
-    )
+    cell.setLstAll(with: lstAll)
 
 
     return cell

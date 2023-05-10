@@ -7,27 +7,30 @@
 
 import Foundation
 
-struct Product {
-  let id: Int
+struct ProductListResponse: Decodable {
+  let d: [Product]
+}
+
+struct Product: Decodable {
+  let id: String
   let name: String
-  let price: Double
+  let price: ProductPrice
+  let image: [String]
+  
+  private enum CodingKeys: String, CodingKey {
+      case id = "_id"
+      case name
+      case price = "productPrice"
+      case image = "imageUrls"
+    }
   
 }
 
-extension Product {
+struct ProductPrice: Decodable {
+  let retailPrice: Double
   
-  public static func getMockProductArray() -> [Product] {
-    return [
-      Product(id: 1, name: "Bitcoin", price: 1299),
-      Product(id: 2, name: "Etherium", price: 800),
-      Product(id: 3, name: "Xrp", price: 25),
-      Product(id: 4, name: "Cardano", price: 25),
-      Product(id: 5, name: "Solana", price: 25),
-      Product(id: 6, name: "Polkadot", price: 253),
-      Product(id: 7, name: "Solana", price: 55),
-      Product(id: 8, name: "Polkadot", price: 12),
-      Product(id: 9, name: "Solana", price: 2565),
-      Product(id: 10, name: "Polkadot", price: 523),
-    ]
-  }
+
+  
 }
+
+

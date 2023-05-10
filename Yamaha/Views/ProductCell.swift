@@ -12,19 +12,8 @@ class ProductCell: UICollectionViewCell {
   
   static let identifier = "ProductCell"
   
-  // Variables
-  private(set) var product: Product!
-  
   
   // UI Components
-  
-//  private let stackView: UIStackView = {
-//    let sv = UIStackView()
-//    sv.axis = .vertical
-//    sv.spacing = 8
-//    sv.alignment = .center
-//    return sv
-//  }()
   
   private let wrapTwoLabels: UIView = {
     let wtl = UIView()
@@ -65,23 +54,33 @@ class ProductCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configure(with model: Any) {
-    if let product = model as? Product {
-      self.productName.text = product.name.description
-      self.productPrice.text = product.price.description
-    } else if let lstAll = model as? LstAll {
-      self.productName.text = lstAll.lstAllName.description
-      self.productPrice.text = lstAll.lstAllPrice.description
-    } else if let bolo = model as? Bolo {
-      self.productName.text = bolo.boloName.description
-      self.productPrice.text = bolo.boloPrice.description
-    } else {
-      fatalError("Invalid model type")
+  public func setProduct(with product: Product) {
+    
+    let formattedPrice = String(format: "%.2f", product.price.retailPrice)
+    self.productName.text = product.name
+    self.productPrice.text = formattedPrice
+    let url = URL(string: product.image[0])
+
+    let imageData = try? Data(contentsOf: url!)
+    if let imageData = imageData {
+      self.productImage.image = UIImage(data: imageData)
     }
-//    self.product = product
-//
-//    self.productName.text = product.name.description
-//    self.productPrice.text = product.price.description
+  
+  }
+  
+  public func setLstAll(with lstAll: LstAll) {
+    self.productName.text = lstAll.lstAllName
+    self.productPrice.text = "\(lstAll.quantity) qty"
+    
+    let url = URL(string: lstAll.image)
+
+    if let u = url, let imageData = try? Data(contentsOf: u) {
+      self.productImage.image = UIImage(data: imageData)
+    }
+  }
+  
+  public func setBolo(with bolo: Bolo) {
+    
   }
   
   // Setup UI
@@ -110,16 +109,12 @@ class ProductCell: UICollectionViewCell {
       wrapTwoLabels.leadingAnchor.constraint(equalTo: productImage.leadingAnchor),
       wrapTwoLabels.trailingAnchor.constraint(equalTo: productImage.trailingAnchor),
       
-      productName.leadingAnchor.constraint(equalTo: wrapTwoLabels.leadingAnchor, constant: 20),
+      productName.leadingAnchor.constraint(equalTo: wrapTwoLabels.leadingAnchor),
+      productName.widthAnchor.constraint(equalTo: wrapTwoLabels.widthAnchor, multiplier: 0.5),
       
-      productPrice.trailingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: -20)
-
+      productPrice.trailingAnchor.constraint(equalTo: productImage.trailingAnchor)
       
-//      stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-//      stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-//      stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
-      
-        ])
+      ])
   }
   
   

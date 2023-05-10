@@ -36,10 +36,6 @@ class HomePageViewController: UIViewController {
   }
   
   @objc func logout() {
-//    dismiss(animated: true, completion: nil)
-//    let loginViewController = LoginScreenViewController()
-//    loginViewController.modalPresentationStyle = .fullScreen
-//    present(loginViewController, animated: true, completion: nil)
     
     dismiss(animated: true) {
       let vc = LoginViewController()

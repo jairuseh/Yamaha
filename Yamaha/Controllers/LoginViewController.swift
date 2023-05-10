@@ -118,22 +118,4 @@ class LoginViewController: UIViewController {
     }
   }
 }
-    
-    
-    
-//    guard let email = usernameTextField.text, let password = passwordTextField.text else {
-//      return
-//    }
-//
-//
-//    if email == savedEmail && password == savedPassword {
-//      let homePageVC = HomePageViewController()
-//      navigationController.pushViewController(homePageVC, animated: true)
-//    } else {
-//      let alertController = UIAlertController(title: "Error", message: "Invalid email or password", preferredStyle: .alert)
-//      alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//      present(alertController, animated: true, completion: nil)
-//    }
-          
-
 
