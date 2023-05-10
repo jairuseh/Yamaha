@@ -11,7 +11,7 @@ import UIKit
 
 class BOLOViewController: UIViewController {
   
-  private let bolo: [Bolo] = Bolo.mockArrayBolo()
+  private var bolo: [Bolo] = []
   
   let boloCollectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
