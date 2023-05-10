@@ -20,7 +20,7 @@ class BOLOViewController: UIViewController {
     let width = UIScreen.main.bounds.width - (spacing * 3.0)
     layout.itemSize = CGSize(width: width / 2, height: 200)
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    cv.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
+    cv.register(BoloCell.self, forCellWithReuseIdentifier: BoloCell.identifier)
     return cv
   }()
   
@@ -32,6 +32,13 @@ class BOLOViewController: UIViewController {
     
     boloCollectionView.delegate = self
     boloCollectionView.dataSource = self
+    
+    ApiHandler.sharedInstance.getBoloList { apiData in
+      self.bolo = apiData
+      DispatchQueue.main.async {
+        self.boloCollectionView.reloadData()
+      }
+    }
     
   }
   
@@ -66,8 +73,8 @@ extension BOLOViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = boloCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
-      fatalError("Unable to dequeue ProductCell")
+    guard let cell = boloCollectionView.dequeueReusableCell(withReuseIdentifier: BoloCell.identifier, for: indexPath) as? BoloCell else {
+      fatalError("Unable to dequeue BoloCell")
     }
     let bolo = self.bolo[indexPath.item]
     cell.setBolo(with: bolo)
