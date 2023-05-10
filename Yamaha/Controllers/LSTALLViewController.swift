@@ -20,7 +20,7 @@ class LSTALLViewController: UIViewController {
     let width = UIScreen.main.bounds.width - (spacing * 3.0)
     layout.itemSize = CGSize(width: width / 2, height: 200)
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    cv.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
+    cv.register(LstAllCell.self, forCellWithReuseIdentifier: LstAllCell.identifier)
     return cv
   }()
   
@@ -75,8 +75,8 @@ extension LSTALLViewController: UICollectionViewDelegate, UICollectionViewDataSo
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = lstAllCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
-      fatalError("Unable to dequeue ProductCell")
+    guard let cell = lstAllCollectionView.dequeueReusableCell(withReuseIdentifier: LstAllCell.identifier, for: indexPath) as? LstAllCell else {
+      fatalError("Unable to dequeue LstAllCell")
     }
     let lstAll = self.lstAll[indexPath.item]
     cell.setLstAll(with: lstAll)
