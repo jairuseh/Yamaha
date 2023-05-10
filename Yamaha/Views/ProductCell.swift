@@ -12,11 +12,6 @@ class ProductCell: UICollectionViewCell {
   
   static let identifier = "ProductCell"
   
-  // Variables
-  private(set) var displayedProduct: Product!
-  private(set) var displayedLstAll: LstAll!
-  private(set) var displayedBolo: Bolo!
-  
   
   // UI Components
   
